@@ -69,6 +69,10 @@ mark { background: linear-gradient(transparent 38%, var(--hl) 38%, var(--hl) 92%
 .top nav { display: flex; gap: 18px; flex-wrap: wrap; }
 .top nav a { color: var(--ink); text-decoration: none; font-size: 14px; }
 .top nav a:hover { color: var(--pen); }
+.top nav { align-items: center; }
+.lang { font-family: var(--mono); font-size: 12.5px; letter-spacing: .06em; padding: 3px 10px; border: 1.5px solid var(--ink); border-radius: 3px; background: transparent; color: var(--ink); cursor: pointer; }
+.lang:hover { background: var(--ink); color: var(--paper); }
+html[lang="en"] .hero-title { font-size: clamp(44px, 7vw, 84px); }
 
 /* intro */
 .intro { padding-block: 64px 72px; }
@@ -312,8 +316,6 @@ dialog.panel::backdrop { background: var(--scrim); }
 }
 </style>
 
-</head>
-<body>
 <div class="wrap">
   <header class="top">
     <span class="label">Kim Daim · Portfolio 2026</span>
@@ -324,6 +326,7 @@ dialog.panel::backdrop { background: var(--scrim); }
       <a href="#field">리더십·교육</a>
       <a href="#awards">수료·수상</a>
       <a href="#contact">연락</a>
+      <button type="button" class="lang" id="langBtn" aria-label="View in English">ENG</button>
     </nav>
   </header>
 
@@ -388,7 +391,6 @@ dialog.panel::backdrop { background: var(--scrim); }
           <div class="filters" role="group" aria-label="분야별 필터" id="filters"></div>
         </div>
         <ul class="rows" id="rows"></ul>
-        <p class="misc"><b>그 밖에</b> LinKick: 대학 여자 축구 동아리를 잇는 플랫폼 공모전 제출</p>
       </div>
     </div>
   </section>
@@ -475,7 +477,7 @@ dialog.panel::backdrop { background: var(--scrim); }
       year: 2025, period: "2025.09 – 2026.03", context: "제60회 교내 ET전 R&D 4팀 → 2026 춘계 교육정보미디어학회",
       role: "팀장 · 기획 · 앱 개발", format: "팀", cats: ["product", "learning", "leadership"],
       tools: "Figma · FlutterFlow · 생성형 AI",
-      cover: "img/seaum-cover.jpg", coverAlt: "SEA:UM 전시 테이블의 노트북과 태블릿 앱 시연",
+      cover: "img/thumb-seaum.jpg", coverAlt: "SEA:UM 전시 테이블의 노트북과 태블릿 앱 시연",
       summary: "은퇴예정자의 여가정체성과 사회적 연결을 돕는 앱·교육 프로그램입니다. 교내 ET전에 출품한 뒤, FlutterFlow를 직접 배워 실제 앱과 AI 여가 추천을 구현해 학회에 출품했습니다.",
       problem: "은퇴 직후에는 일과 함께 역할과 관계, 하루의 리듬이 한꺼번에 빠져나갑니다. 은퇴예정자와 전문가를 조사해, 비직업적 활동으로 새 정체성을 만드는 방법을 모르는 데서 오는 심리·사회적 공백을 문제로 정의했습니다.",
       solution: "여가정체성 탐색과 AI 여가 추천, 맞춤형 온라인 교육과 일일 여가 목표, 커뮤니티 · 블로그 · 채팅, 활동 기록과 동기부여 기능으로 구성한 앱과 교육 프로그램.",
@@ -497,7 +499,7 @@ dialog.panel::backdrop { background: var(--scrim); }
       year: 2026, period: "2026", context: "공공데이터 경진대회 출품",
       role: "데이터 구조 설계 · 서비스 기획 · 와이어프레임", format: "팀", cats: ["product", "learning"],
       tools: "n8n · NEIS API · Supabase · Upstage Solar API · FlutterFlow",
-      cover: "img/haipit-cover.jpg", coverAlt: "하이핏 와이어프레임 네 화면",
+      cover: "img/thumb-haipit.jpg", coverAlt: "하이핏 와이어프레임 네 화면",
       summary: "중학생이 고교학점제를 이해하고 진로에 맞는 과목과 학교를 찾도록 돕는 앱입니다. 공공데이터를 서비스 구조로 바꾸고, 생기부 분석 파이프라인과 와이어프레임을 설계했습니다.",
       problem: "중학교 3학년은 고교학점제라는 새 환경에서 진로에 맞는 교육과정을 운영하는 학교를 객관적으로 비교할 도구가 없어 진학 선택에 혼란을 겪습니다.",
       solution: "생기부 분석 기반 진로 키워드, 진로-과목 매칭, 고교 추천, 3개년 수강 로드맵, 고교학점제 제도 설명.",
@@ -516,7 +518,7 @@ dialog.panel::backdrop { background: var(--scrim); }
       year: 2025, period: "2025.03 – 08", context: "UMC 8기 · 데모데이 · 서울시 일자리박람회",
       role: "PM", format: "팀", cats: ["product", "leadership"],
       tools: "Figma · 기능명세서",
-      cover: "img/gongspot-cover.jpg", coverAlt: "공스팟 서비스 소개 표지",
+      cover: "img/thumb-gongspot.jpg", coverAlt: "공스팟 서비스 소개 표지",
       links: [["https://app.notion.com/p/GONGSPOT-244697113e0c806a8acbfc01e74a16a6", "소개 노션 보기 ↗"]],
       summary: "첫 사이드 프로젝트에 IT 지식 없이 PM으로 합류해, 시장조사부터 기능명세 · 와이어프레임 · 발표를 맡고 데모데이와 서울시 일자리박람회 부스 운영까지 서비스를 현장에 연결했습니다.",
       problem: "스터디카페와 카페 말고도 다양한 학습 공간이 있지만 정보가 흩어져 있어, 내 학습 목적과 필요한 시설에 맞는 공간을 한눈에 비교하기 어렵습니다.",
@@ -557,7 +559,7 @@ dialog.panel::backdrop { background: var(--scrim); }
       year: 2024, period: "2024.09 – 2025.03", context: "제59회 교내 ET전 LID 2팀",
       role: "팀원 · 리서치 · 캐릭터 · 프로토타입", format: "팀", cats: ["learning", "product", "visual"],
       tools: "Figma",
-      cover: "img/any-cover.jpg", coverAlt: "ANY 말 콘텐츠 소개서 표지",
+      cover: "img/thumb-any-mal.jpg", coverAlt: "ANY 말 콘텐츠 소개서 표지",
       summary: "비폭력 대화 4단계를 RPG의 퀘스트 · 평가 · 보상 구조로 바꾸고, 디자인 리서치와 두 차례 사용자 테스트를 거쳐 Figma 기반 교육게임 프로토타입을 완성했습니다.",
       problem: "온라인 중심 소통에 익숙한 초등 고학년 · 중학생은 갈등 상황에서 감정과 욕구를 표현하고 상대를 존중하며 대화하는 연습을 할 기회가 부족합니다.",
       solution: "학습자가 동물 마을의 이장이 되어 마을 갈등을 해결하는 RPG. 관찰–감정–욕구–요청 4단계를 퀘스트와 대화 구조에 적용하고, 대화 후 자기평가 · 동료평가 · AI 챗봇 ‘푸름이’의 피드백과 보상으로 연습을 이어가게 했습니다.",
@@ -576,7 +578,7 @@ dialog.panel::backdrop { background: var(--scrim); }
       sub: "중학생 대상 진로역량교육 학습 경험 개선 방안",
       year: 2025, period: "2025 · 2학기", context: "학습경험디자인 기말 팀 프로젝트",
       role: "프로토타입 설계 · 산출물 디자인", format: "팀", cats: ["learning", "product", "visual"],
-      cover: "img/career-cover.jpg", coverAlt: "학생용 진로 대시보드 프로토타입 슬라이드",
+      cover: "img/thumb-career-lxd.jpg", coverAlt: "학생용 진로 대시보드 프로토타입 슬라이드",
       summary: "일회성 진로특강의 한계를 학습자 관점에서 분석하고, 중학생이 목표 설정–실행–성찰을 쌓아 가는 블렌디드 진로설계 플랫폼을 더블 다이아몬드 과정으로 설계해 우수과제로 선정되었습니다.",
       problem: "중학교 진로교육이 일회성 · 강의식 특강과 단순 정보 전달에 머물러, 학생들이 실질적인 진로 탐색 경험을 하기 어렵고 진로교육을 형식적인 행사로 인식합니다.",
       solution: "온 · 오프라인을 연계한 블렌디드 진로교육 플랫폼. 학생용 진로 DNA 대시보드 · 로드맵 · 활동기록 · 포트폴리오와 교사용 현황 확인 · 구조화 피드백 · 맞춤 과제.",
@@ -595,7 +597,7 @@ dialog.panel::backdrop { background: var(--scrim); }
       year: 2026, period: "2026.09 – 10", context: "2026 인공지능(AI) 활용 청소년활동 안전공모전 · 팀 집킴이",
       role: "팀장 (2인 팀)", format: "팀", cats: ["learning", "product", "leadership"],
       tools: "생성형 AI (이미지 · 게임 제작)",
-      cover: "img/dream-cover.jpg", coverAlt: "나만의 안전 드림하우스 수업 PPT 표지",
+      cover: "img/thumb-dreamhouse.jpg", coverAlt: "나만의 안전 드림하우스 수업 PPT 표지",
       links: [["https://daim1006.github.io/SafeDreamhHouse/", "게임 해보기 ↗"]],
       summary: "초등학생이 집 안 위험을 직접 찾고 고치는 스토리형 안전교육입니다. <mark>AI를 활용해 교육자료와 게임을 직접 만들었습니다.</mark>",
       problem: "학령기 아동의 안전사고는 주택에서 가장 많이 일어나지만, 학교 안전교육 중 가정안전 교육 경험은 교통 · 화재안전보다 낮습니다. 초등 3~4학년이 집 안의 위험요소를 스스로 발견하고 예방 · 대처 방법을 고를 수 있게 돕고자 했습니다.",
@@ -613,7 +615,7 @@ dialog.panel::backdrop { background: var(--scrim); }
       sub: "2025 YDBB Concert ‘Our Night, Curtain Call’ Concert Pass",
       year: 2025, period: "2025 · 2학기", context: "디자인익스프레션 기말 개인과제",
       role: "개인 작업", format: "개인", cats: ["visual"], tools: "Adobe Photoshop",
-      cover: "img/ydbb-1.jpg",
+      cover: "img/thumb-ydbb.jpg",
       summary: "콘서트를 ‘행복을 향한 항해’로 해석하고, 공연의 세 장면을 색채 · 문구 · 목적지 코드로 구분한 승선권 형식의 티켓 3종을 디자인했습니다.",
       problem: "세 장의 티켓이 하나의 시각 시스템 안에서 서로 다른 장면과 감정을 전달하도록 하는 것이 목표였습니다.",
       solution: "승객 · 출발일 · 목적지 정보 구조와 절취선을 공통 레이아웃으로 두고, DIZ · LUV · FIN → HAP 목적지 코드와 장면별 하늘 · 바다 색채로 감정의 흐름을 표현했습니다.",
@@ -642,7 +644,7 @@ dialog.panel::backdrop { background: var(--scrim); }
       sub: "합창동아리 SNS 운영과 여름 · 겨울공연 팜플렛 · 포스터 디자인",
       year: 2025, period: "2025.07 – 2026.01", context: "소리모아 합창동아리 · 홍보부장",
       role: "홍보부장 · 팜플렛 · 포스터 디자인", format: "", cats: ["visual", "leadership"],
-      cover: "img/sori-cover.jpg", coverAlt: "여름공연 포스터와 겨울공연 포스터",
+      cover: "img/thumb-sorimoa.jpg", coverAlt: "여름공연 포스터와 겨울공연 포스터",
       summary: "합창동아리 홍보부장으로 <mark>소리모아 인스타그램과 유튜브를 운영</mark>하고, 여름 · 겨울 정기공연의 팜플렛과 포스터를 디자인했습니다. 공연 콘셉트를 레코드판과 라디오라는 하나의 모티프로 정리해 표지, 타임테이블, 무대 소개까지 이어지게 구성했습니다.",
       solution: "여름공연은 ‘당신의 장르’라는 주제에 맞춰 레코드판 · 해변 모티프, 장르별 조창 소개, QR 관객 투표 · 응원 메시지 이벤트, 장르별 추천곡 트랙리스트로 구성했습니다. 겨울공연은 ‘사연을 중심으로 한 라디오 프로그램’ 콘셉트에 맞춰 라디오와 하늘 이미지로 포스터와 팜플렛을 통일했습니다.",
       roleList: ["소리모아 인스타그램 · 유튜브 계정 운영", "신입부원 모집, 공연 · 버스킹 홍보", "공연 콘셉트에 맞춘 비주얼 모티프 개발", "접지형 팜플렛 레이아웃과 정보 위계 (공연 소개 · 타임테이블 · 기수 · 조창 소개)", "관객 참여 이벤트 안내 기획 (여름공연)", "인쇄용 CMYK 파일 제작"],
@@ -664,6 +666,36 @@ dialog.panel::backdrop { background: var(--scrim); }
       deliverables: ["인스타그램 홍보 포스터"],
       gallery: [
         { cls: "g-1 g-narrow", imgs: [["img/knit-poster.jpg", "초록 배경에 뜨개 쿼카 인형과 말풍선 대화가 있는 이화니팅클럽 포스터"]], cap: "‘벗들 뜨개러 쿼카랑 결혼할 수 있어?’ 홍보 포스터" }
+      ]
+    },
+    {
+      id: "linkick", title: "LinKick",
+      sub: "연결되고, 함께 성장하는 대학 여자 축구 교류 플랫폼",
+      year: 2026, period: "2026", context: "[PLCO X KSSF] 2026 축구산업아이디어 공모전 출품 · 마케팅 · 정책 분야",
+      role: "팀 링크크 · 서비스 기획", format: "4인 팀", cats: ["product"],
+      cover: "img/linkick-1.jpg", coverAlt: "LinKick 공모전 표지",
+      summary: "대학 여자 축구 동아리에서 직접 뛰어 본 경험에서 출발한 아이디어입니다. 팀 일정 · 출석 관리, 대학 간 친선전 매칭, 게시판 · 채팅, 링크포인트 보상까지 한곳에 모은 올인원 교류 플랫폼을 기획했습니다.",
+      problem: "동아리 내부 데이터 분석 결과 부원의 약 70%가 2학기 이내에 이탈했고, 동아리 간 교류는 개인 SNS 연락에 의존해 정보가 쌓이지 않았습니다. 지원이 부족해 재정 부담도 컸습니다.",
+      solution: "개인 · 팀 계정 구조, 캘린더 기반 팀 · 구장 · 대회 일정, 입문자 · 친선전 · 훈련 · 운영진 게시판, 활동에 따라 쌓이는 링크포인트와 레벨, 토큰으로 교환하는 제휴 할인으로 꾸준한 참여를 유도합니다.",
+      roleList: ["대학 여자 축구 동아리 문제 정의와 시장 분석", "메뉴트리 · 주요 기능 설계", "보상 · 게이미피케이션 구조와 비즈니스 모델 기획"],
+      process: [["문제 정의", "이탈률 · 교류 단절 · 재정"], ["시장 분석", "여자 축구 시장 성장"], ["솔루션", "메뉴트리 · 주요 기능"], ["BM", "브랜드 협찬 · 제휴"]],
+      deliverables: ["공모전 제안서", "메뉴트리", "앱 화면 설계"],
+      gallery: [
+        { cls: "g-1", imgs: [["img/linkick-1.jpg", "LinKick 제안서 표지와 앱 시작 화면"]], cap: "제안서 표지 (다른 팀원 이름은 모자이크)" },
+        { cls: "g-1", imgs: [["img/linkick-2.jpg", "LinKick 서비스 소개: 일정 관리, 보상 제도, 대학 간 네트워킹"]], cap: "서비스 소개: 일정 관리 · 보상 제도 · 대학 간 네트워킹" },
+        { cls: "g-2", imgs: [["img/linkick-3.jpg", "온보딩과 홈 화면 기능 설명"], ["img/linkick-4.jpg", "게시판과 채팅방 기능 설명"]], cap: "주요 기능: 온보딩 · 홈, 게시판 · 채팅방" }
+      ]
+    },
+    {
+      id: "youthbridge", title: "영등포구 청년브릿지 기획단",
+      sub: "2025 영등포구 청년브릿지 기획단 최우수활동자",
+      year: 2025, period: "2025.05.21 – 07.14", context: "영등포구청 주최 · ㈜뉴팀즈 주관",
+      role: "기획단원", format: "", cats: ["leadership"],
+      cover: "img/youthbridge.jpg", coverAlt: "2025 영등포구 청년브릿지 기획단 최우수상 상장",
+      summary: "영등포구청이 주최하고 ㈜뉴팀즈가 주관한 ‘2025 영등포구 청년브릿지 기획단’ 과정을 성실히 수행해 <mark>최우수활동자로 선정</mark>되었습니다.",
+      outcomes: ["최우수상 (최우수활동자) · 영등포구청장"],
+      gallery: [
+        { cls: "g-1 g-narrow", imgs: [["img/youthbridge.jpg", "2025 영등포구 청년브릿지 기획단 최우수상 상장"]], cap: "최우수상 상장 · 2025.07.14" }
       ]
     },
     {
@@ -737,6 +769,7 @@ dialog.panel::backdrop { background: var(--scrim); }
       ["03 – 06", "프로젝트", "불스원샷 · 주택청약 교육 교수설계", "bulls"],
       ["1학기", "프로젝트", "AIDT 보조도구", "aidt"],
       ["2025", "리더십", "대학생사회리더멘토링-창업분야 팀장"],
+      ["05 – 07", "활동", "2025 영등포구 청년브릿지 기획단 · 최우수활동자", "youthbridge"],
       ["07", "디자인", "소리모아 합창동아리 홍보부장 · 여름공연 팜플렛", "sorimoa"],
       ["09 –", "프로젝트", "SEA:UM 팀장 · 제60회 교내 ET전 출품", "seaum"],
       ["2학기", "프로젝트", "박물관 기반 비형식학습", "museum"],
@@ -747,6 +780,7 @@ dialog.panel::backdrop { background: var(--scrim); }
       ["춘계", "학회", "SEA:UM · 2026 춘계 교육정보미디어학회 출품", "seaum"],
       ["2026", "프로젝트", "하이핏 · 공공데이터 경진대회 출품", "haipit"],
       ["2026", "해커톤", "PickEat · Upstage 로우코드 해커톤", "pickeat"],
+      ["2026", "공모전", "LinKick · 축구산업아이디어 공모전 출품", "linkick"],
       ["01", "디자인", "소리모아 겨울공연 팜플렛 · 포스터", "sorimoa"],
       ["2026", "디자인", "이화니팅클럽 디자인 팀장 · 홍보 포스터", "knitting"],
       ["여름", "프로젝트", "호그와트 마법교육공학 체험 프로그램", "hogwarts"],
@@ -774,44 +808,283 @@ dialog.panel::backdrop { background: var(--scrim); }
   ];
   var AWARDS = [
     ["2026 OUTTA AI 부트캠프 수료", "2026.08", "<b>AI Competition 문제 1등</b> · NLP 미니프로젝트 ‘몽글뜨개’. 서울대 글로벌공학교육센터 · 공학교육혁신센터 후원"],
+    ["영등포구 청년브릿지 기획단 최우수상", "2025.07", "<b>최우수활동자</b> 선정 · 영등포구청 주최, ㈜뉴팀즈 주관 (2025.05 – 07)", "youthbridge"],
     ["UMC 8기 수료", "2025.08", "전국 대학생 IT 연합 동아리 University MakeUs Challenge · <b>Plan 파트</b> 주니어 코스"],
     ["학습경험디자인 우수과제", "2025-2", "중학생 대상 진로역량교육 학습 경험 개선 방안", "career-lxd"],
     ["장학", "교내", "학술활동 장학금 2회 · 전공리더십 장학금 1회"]
   ];
 
+  var EN = {
+    cats: { learning: "Learning Design", product: "Product & UX", visual: "Visual Design", leadership: "Leadership" },
+    ui: { more: "View details →", all: "All", period: "Period", context: "Context", role: "Role", tools: "Tools", project: "project",
+      problem: "Problem & solution", solution: "Solution", myrole: "My role", pivot: "User research changed the product", process: "Process",
+      keydesign: "Making crowd data trustworthy", outcome: "Outcome", deliverables: "Deliverables", vol: "4 volunteer programs", hours: "hrs",
+      copied: "Copied", copy: "Copy", selected: "Selected", details: "details", team: "Team", solo: "Solo" },
+    P: {
+      seaum: { title: "SEA:UM", sub: "An educational-technology approach to easing the psychosocial gap of retirement transition",
+        period: "Sep 2025 – Mar 2026", context: "60th Ewha ET Exhibition R&D Team 4 → 2026 Spring KAEIM Conference",
+        role: "Team lead · Planning · App development", tools: "Figma · FlutterFlow · Generative AI", coverAlt: "SEA:UM project thumbnail",
+        summary: "An app and education program that helps pre-retirees build a leisure identity and social connections. After exhibiting it on campus, I taught myself FlutterFlow to build a working app with AI leisure recommendations for an academic conference.",
+        problem: "Retirement removes work along with roles, relationships and daily rhythm. Through research with pre-retirees and experts, we defined the problem as a psychosocial gap that comes from not knowing how to form a new identity through non-work activities.",
+        solution: "An app and program combining leisure-identity discovery with AI recommendations, personalized online courses and daily leisure goals, community, blog and chat, and activity logging with motivation.",
+        roleList: ["Led the team and managed the schedule", "Planned and designed the overall service", "Designed the prototype and merchandise", "Taught myself FlutterFlow to build the app and its AI leisure-recommendation feature"],
+        processNote: "Design thinking process",
+        process: [["Research", "Pre-retirees and experts"], ["Design", "Service and education program"], ["Validate", "Figma prototype testing"], ["Exhibit", "Campus exhibition → conference"]],
+        outcomes: ["Exhibited at the 60th Ewha ET Exhibition", "Presented at the 2026 Spring KAEIM Conference"],
+        deliverables: ["FlutterFlow app", "Figma prototype", "Leaflet and poster", "Docent script and promo video", "Merchandise"],
+        caps: ["ET Exhibition booth and the 2026 Spring KAEIM Conference poster: “SEA:UM, a leisure-identity app for easing the psychosocial gap of retirement transition”", "App screens: home, mission log, monthly report, AI report summary"] },
+      haipit: { title: "HighFit", sub: "AI-personalized high school credit system career planner for 9th graders",
+        period: "2026", context: "Public Data Competition entry", role: "Data structure · Service planning · Wireframes",
+        tools: "n8n · NEIS API · Supabase · Upstage Solar API · FlutterFlow", coverAlt: "HighFit project thumbnail",
+        summary: "An app that helps middle schoolers understand Korea's new high school credit system and find courses and schools that fit their career goals. I turned public data into a service structure and designed a school-record analysis pipeline and wireframes.",
+        problem: "Under the new high school credit system, 9th graders have no objective way to compare which schools offer the curriculum that fits their career path.",
+        solution: "Career keywords from school-record analysis, career-to-course matching, school recommendations, a three-year course roadmap, and plain-language guides to the credit system.",
+        pivot: [["First hypothesis", "Analyze school records and recommend schools offering the most matching courses."], ["Finding", "Students were stuck earlier: <mark>they didn't understand the credit system itself</mark>."], ["Decision", "Added system guides and simplified the school-recommendation criteria after feedback that they were too complex."]],
+        roleList: ["Designed the public-data structure and flow; wireframed key screens", "Documented the service with user flows, IA, Mermaid diagrams and an interactive menu tree", "Automated NEIS API integration, Supabase migration and course-matching logic with n8n", "Designed a school-record analysis pipeline on Upstage Solar API with an evidence-first prompt structure to reduce hallucination"],
+        outcomes: ["Submitted to the Public Data Competition", "Lesson learned: public APIs don't cover every school's real curriculum, and scoping features around missing data is part of planning."],
+        deliverables: ["Data structure", "Service IA and user flows", "Wireframes", "n8n automation workflows"],
+        caps: ["Wireframes: career profile, school-record analysis, school recommendation, three-year roadmap"] },
+      gongspot: { title: "GongSpot", sub: "A study map for young people", period: "Mar – Aug 2025", context: "UMC 8th · Demo Day · Seoul Job Fair",
+        role: "PM", tools: "Figma · Feature specs", coverAlt: "GongSpot project thumbnail", links: [["https://app.notion.com/p/GONGSPOT-244697113e0c806a8acbfc01e74a16a6", "Notion page ↗"]],
+        summary: "I joined my first side project as PM with no IT background, owned market research, feature specs, wireframes and pitching, and took the service to Demo Day and the Seoul Job Fair booth.",
+        problem: "Beyond study cafés there are many study spaces, but the information is scattered, so it's hard to compare spaces by study purpose and facilities.",
+        solution: "Keyword-based study-space info, personalized recommendations, detailed reviews, and review-based real-time and predicted crowd levels.",
+        design: ["Split real-time crowd levels (user reviews) from predicted levels by time (Google Maps data)", "Crowd reviews <mark>require GPS check-in at the place</mark> to keep them trustworthy", "Seeded space data via map APIs and crawling, and planned a supporters program for early reviews"],
+        roleList: ["Market research", "Feature specification", "Wireframes", "Pitch prep, Demo Day booth planning and operation", "Seoul Job Fair booth operation", "Studied map APIs, data collection and payments to speak the developers' language"],
+        process: [["Research", "Market research"], ["Define", "Feature specs"], ["Design", "Wireframes"], ["Pitch", "Demo Day pitch and booth"], ["Extend", "Seoul Job Fair booth"]],
+        outcomes: ["Pitched and ran a booth at UMC 8th Demo Day", "Introduced the service to visitors at the Seoul Job Fair", "Completed UMC 8th (Plan part)"],
+        deliverables: ["Market research", "Feature specs", "Wireframes", "Pitch deck", "Booth materials"],
+        caps: ["Space recommendation screens: matching study spaces with real-time crowd levels", "Demo Day X-banner, Seoul Job Fair booth, UMC 8th certificate (Plan, Mar 14 – Aug 23, 2025)"] },
+      pickeat: { title: "PickEat", sub: "AI-powered personalized nutrition label interpreter", period: "2026",
+        context: "Upstage Low-code Hackathon · Team Sibohya (4 people, with 3 CS students)", role: "Planning · Design · Front-end",
+        tools: "Lovable · n8n · Upstage Solar LLM · Document Parse · Information Extract", coverAlt: "PickEat screens",
+        summary: "Upload a photo of a nutrition label and AI tells you whether the product fits your health goals. We <mark>built the web app with Lovable in one week</mark>; I led planning, design and front-end.",
+        problem: "More people check nutrition labels, yet 68% don't know what “zero” labels mean. In our survey of 50 people in their 20s–50s, 63% said labels are hard to read, mostly because they can't tell what suits them.",
+        solution: "Label scanning (Document Parse and Information Extract), goal-based ingredient judgment (Solar LLM), an AI chatbot, caution alerts, alternative products, and intake history.",
+        roleList: ["Planning: problem definition, survey-based features, target and business model", "Design: UI for home, scan, history and chatbot", "Front-end: built the web app screens with Lovable"],
+        process: [["Define", "Why labels are hard"], ["Validate", "Survey of 50 people"], ["Design", "Features and screens"], ["Build", "Lovable app + n8n workflows"], ["Pitch", "Demo video and pitch"]],
+        outcomes: ["Added goal-based analysis and cumulative intake tracking from survey results", "Designed a premium plan (₩2,900/month) based on 81.6% willingness to pay ₩2,000+"],
+        deliverables: ["Web app", "n8n workflows", "Pitch deck", "Demo video"],
+        caps: ["Home, scan result, history and AI chatbot screens", "Key features"] },
+      "any-mal": { title: "ANY Mal", sub: "A communication RPG based on Nonviolent Communication for upper elementary and middle school students",
+        period: "Sep 2024 – Mar 2025", context: "59th Ewha ET Exhibition LID Team 2", role: "Member · Research · Characters · Prototype", tools: "Figma", coverAlt: "ANY Mal project thumbnail",
+        summary: "We turned the four steps of Nonviolent Communication into an RPG's quests, assessments and rewards, and completed a Figma game prototype through design research and two rounds of user testing.",
+        problem: "Students used to online communication rarely get to practice expressing feelings and needs respectfully in conflict.",
+        solution: "Learners become village chiefs who resolve conflicts. Observation–feelings–needs–requests are built into quests and dialogue, followed by self-, peer- and AI-chatbot (“Pureumi”) feedback and rewards.",
+        roleNote: "Confirmed personal contributions",
+        roleList: ["Benchmarked metaverse and multiplayer learning content", "Surveyed learners' game preferences; design research", "Designed the world and mirrored storyline", "Designed animal and player characters and customization", "Built start, main and prologue screens in Figma"],
+        process: [["Research", "Benchmarks and learner preferences"], ["Design", "NVC steps → quests, dialogue, assessment, rewards"], ["Prototype", "Figma prototype"], ["Test", "Persona test, then 8th-grader test"], ["Iterate", "Stronger step guides, split checklists"]],
+        outcomes: ["Confirmed understanding and transfer of the four steps through two user tests", "Reflected feedback that real-life language habits need extra support"],
+        deliverables: ["Game design doc", "Design research", "Figma prototype", "Character and screen design", "User test report", "Content brief and poster"],
+        caps: ["Content brief: dialogue, self- and peer-assessment flow, and the AI chatbot “Pureumi”"] },
+      "career-lxd": { title: "Career Education Redesign", badge: "Best project", sub: "Improving the learning experience of career education for middle schoolers",
+        period: "Fall 2025", context: "Learning Experience Design final team project", role: "Prototype design · Deliverable design", coverAlt: "Career education project thumbnail",
+        summary: "We analyzed the limits of one-off career lectures from the learner's view and designed a blended platform where students build up goal–action–reflection cycles, using the Double Diamond. Selected as a best project.",
+        problem: "Middle school career education stays at one-off lectures and information delivery, so students see it as a formality.",
+        solution: "A blended online-offline platform: career DNA dashboard, roadmap, activity log and portfolio for students; progress view, structured feedback and tailored tasks for teachers.",
+        roleList: ["Platform prototype design", "Deliverable design"], processNote: "Team process · Double Diamond",
+        process: [["Discover", "Literature, 1:1 interviews, clustering"], ["Define", "Persona, journey map, 5 Whys, HMW"], ["Develop", "Concept brief, blueprint, storyboard"], ["Deliver", "Presentation, implications and limits"]],
+        outcomes: ["Selected as a best project in class"], deliverables: ["Service blueprint", "User journey map", "Student and teacher storyboards", "Platform prototype", "Presentation"],
+        caps: ["Student prototype and storyboard; project implications and limits (team deck)"] },
+      dreamhouse: { title: "My Safe Dream House", sub: "My Safe Dream House: home safety education", period: "Sep – Oct 2026",
+        context: "2026 AI Youth Activity Safety Contest · Team Jipkimi", role: "Team lead (2-person team)", tools: "Generative AI (images, game)", coverAlt: "Dream House project thumbnail",
+        links: [["https://daim1006.github.io/SafeDreamhHouse/", "Play the game ↗"]],
+        summary: "A story-based safety lesson where children find and fix hazards at home. <mark>I used AI to create the teaching materials and the game myself.</mark>",
+        problem: "Most child injuries happen at home, yet home safety is taught less than traffic or fire safety. We wanted 3rd–4th graders to spot hazards and choose ways to prevent and respond.",
+        solution: "Hazard hunting, group sharing, a game, a repair report and self-assessment are tied into one story. I used generative AI for hazard images and slides, and built the web game “Dream House Repair Mission”.",
+        roleList: ["Planned home safety lessons for grades 3–4", "Integrated lesson, game, worksheets and assessment", "Built teaching materials and the web game with generative AI", "Led the team and contest submission"],
+        process: [["Find", "Spot hazards"], ["Share", "Group presentation"], ["Play", "Repair mission game"], ["Report", "Home repair report"], ["Reflect", "Self-assessment"]],
+        outcomes: ["Completed a full lesson kit and web game for the contest"], deliverables: ["Lesson plan", "Slides", "Worksheets", "Web game", "Repair report"],
+        caps: ["Lesson cover slide and the safety report generated by the game"] },
+      ydbb: { title: "YDBB Concert Pass", sub: "2025 YDBB Concert ‘Our Night, Curtain Call’ Concert Pass", period: "Fall 2025", context: "Design Expression final, individual",
+        role: "Solo work", tools: "Adobe Photoshop", coverAlt: "Concert Pass project thumbnail",
+        summary: "I framed the concert as a voyage toward happiness and designed three boarding-pass tickets, each scene marked by color, copy and a destination code.",
+        problem: "Make three tickets tell different scenes and emotions within one visual system.",
+        solution: "A shared layout of passenger, date and destination with a tear line, plus DIZ · LUV · FIN → HAP codes and scene-specific sky and sea colors.",
+        roleList: ["Visual concept", "Series layout and hierarchy", "Korean and English typography", "Scene color palettes"], deliverables: ["Three concert pass tickets"],
+        caps: ["One layout system; only the sky and sea colors change per scene."] },
+      hogwarts: { title: "Hogwarts EdTech", sub: "A 15-minute educational technology experience for teens", period: "Summer 2026", context: "Youth center major-experience booth",
+        role: "Program design · Materials", tools: "Generative AI (images, video)",
+        summary: "Teens find a learning problem in a story and pick the right learning tools to experience educational technology in 15 minutes. I created and refined image and video materials with AI.",
+        problem: "Let teens understand what educational technology does by trying it in a short time.",
+        roleList: ["Set audience, time and activity flow", "Trimmed missions and tuned difficulty", "Reviewed copy, print and visuals", "Made and edited images and video with AI"],
+        deliverables: ["15-minute lesson slides", "8 learning-tool cards", "3 secret-method cards", "Worksheet", "Assessment web page"],
+        caps: ["Learners pick a study-method card and a learning-tool card to plan their training."] },
+      sorimoa: { title: "Sorimoa PR Lead", sub: "Choir club social media, plus summer and winter concert brochures and posters", period: "Jul 2025 – Jan 2026",
+        context: "Sorimoa choir club · PR lead", role: "PR lead · Brochure · Poster design", coverAlt: "Sorimoa project thumbnail",
+        summary: "As PR lead of the choir club I <mark>ran Sorimoa's Instagram and YouTube</mark> and designed brochures and posters for the summer and winter concerts, carrying one motif (a record, a radio) from cover to timetable.",
+        solution: "Summer “Playlist: Your Genre” used a record-and-beach motif, genre-based group stages, a QR audience vote and message event, and genre playlists. Winter “On Air” unified poster and brochure around a radio-program concept.",
+        roleList: ["Ran Sorimoa's Instagram and YouTube", "Promoted recruiting, concerts and busking", "Developed concert visual motifs", "Laid out folded brochures and information hierarchy", "Planned the audience event guide (summer)", "Prepared CMYK print files"],
+        deliverables: ["Instagram and YouTube content", "Summer brochure and poster", "Winter brochure and poster"],
+        caps: ["2025 summer concert “Playlist: Your Genre” brochure (others' faces, names and QR codes blurred)", "2026 winter concert “On Air” brochure", "Summer and winter concert posters"] },
+      knitting: { title: "Ewha Knitting Club Poster", sub: "Instagram promo poster for a knitting club", context: "Ewha Knitting Club · Design lead", role: "Design lead",
+        summary: "As design lead I made a promo poster starring the club's crocheted dolls, with a playful chat-bubble tone for social media.",
+        roleList: ["Led the design team", "Designed the promo poster"], deliverables: ["Instagram promo poster"], caps: ["Promo poster"] },
+      aidt: { title: "AIDT Assistant", sub: "An AI digital textbook assistant supporting Korean-language learning for multicultural students", period: "Spring 2025",
+        context: "AI in Education team project", role: "Prototype · Implementation", tools: "Python · Generative AI",
+        summary: "Using the RTI model, we linked diagnosis, grouping and tailored support for multicultural students, and I prototyped the core features with Python and generative AI.",
+        problem: "Reduce gaps in vocabulary, context and cultural understanding, and the limits of one teacher supporting each student.",
+        solution: "RTI-based mini-test diagnosis, level grouping and an AI tutor.",
+        roleList: ["Owned the “Prototype and implementation” section", "Built question generation, answer scoring and grouping with Python and generative AI"],
+        process: [["Diagnose", "Mini-test"], ["Group", "By level"], ["AI tutor", "Tailored support"]], deliverables: ["Feature structure", "Python prototype", "Scenario outputs", "Implementation plan"] },
+      bulls: { title: "Bulls One Shot", sub: "Housing subscription education for college students in their 20s", period: "Mar – Jun 2025", context: "Instructional Design team project",
+        role: "Member · Needs analysis",
+        summary: "With a survey of 66 people and interviews, we defined the gap between knowledge and action on housing subscriptions and designed campus training, score simulation and action plans using ADDIE.",
+        problem: "Help people in their 20s understand the housing subscription system and plan for their own situation.",
+        roleList: ["Researched the lack of housing education", "Wrote survey items", "Wrote interview and client questionnaires; found contacts"],
+        process: [["Analyze", "Survey of 66 and interviews"], ["Design", "Objectives and assessment"], ["Develop", "Content and media"]], deliverables: ["Needs analysis", "Survey and interview data", "Instructional design report"] },
+      museum: { title: "Museum-based Informal Learning", sub: "An art expedition into the Joseon era: history through Kim Hong-do's genre paintings and artifacts", period: "Sep – Dec 2025",
+        context: "Informal Learning & Media team project", role: "Member",
+        summary: "A three-session field trip linking Kim Hong-do's paintings with National Museum of Korea artifacts through observe–interpret–discuss–create.",
+        solution: "Three sessions combining VTS, on-site observation, group discussion and a six-panel storyboard.",
+        process: [["See", "VTS on paintings"], ["Explore", "Museum artifacts"], ["Discuss", "Group talk"], ["Create", "Storyboard"]], deliverables: ["Lesson plan", "Slides", "Worksheets", "Rubric"] },
+      linkick: { title: "LinKick", sub: "A platform that connects university women's football clubs so they grow together",
+        period: "2026", context: "[PLCO X KSSF] 2026 Football Industry Idea Contest entry · Marketing & Policy", role: "Team LinKK (4 members) · Service planning", format: "Team", coverAlt: "LinKick contest cover",
+        summary: "The idea came from playing in university women's football clubs ourselves. We planned an all-in-one platform for team schedules and attendance, inter-university friendly matching, boards and chat, and LinkPoint rewards.",
+        problem: "Club data showed about 70% of members left within two semesters, and club-to-club contact relied on personal SNS messages, so information never accumulated. Limited support also made finances tight.",
+        solution: "Personal and team accounts, calendar-based team, pitch and tournament schedules, boards for beginners, friendlies, training and club officers, plus LinkPoints and levels earned by activity and tokens exchanged for partner discounts.",
+        roleList: ["Defined the problem and analyzed the women's football market", "Designed the menu tree and key features", "Planned the reward and gamification structure and business model"],
+        process: [["Problem", "Dropout, isolation, finances"], ["Market", "Growth of women's football"], ["Solution", "Menu tree and features"], ["BM", "Brand sponsorship and partners"]],
+        deliverables: ["Contest proposal", "Menu tree", "App screen design"],
+        caps: ["Proposal cover (other members' names mosaicked)", "Service overview: schedules, rewards, inter-university networking", "Key features: onboarding and home, boards and chat"] },
+      youthbridge: { title: "Yeongdeungpo Youth Bridge Planning Team", sub: "Top performer, 2025 Yeongdeungpo-gu Youth Bridge Planning Team",
+        period: "May 21 – Jul 14, 2025", context: "Hosted by Yeongdeungpo-gu Office · Run by Newteams Inc.", role: "Planning team member", coverAlt: "Top performer award certificate",
+        summary: "I completed the 2025 Yeongdeungpo-gu Youth Bridge Planning Team program, hosted by the district office and run by Newteams Inc., and was <mark>selected as the top performer</mark>.",
+        outcomes: ["Grand Prize (top performer) · Mayor of Yeongdeungpo-gu"],
+        caps: ["Grand Prize certificate · Jul 14, 2025"] },
+      parttime: { title: "Part-time Job Education", sub: "A part-time job rights program for incoming college students", period: "Spring 2024", context: "Educational Technology team project",
+        role: "Member · Strategy · Presentation",
+        summary: "We designed lessons on Gagné's Nine Events so incoming students can handle legal and real-world problems at part-time jobs.",
+        roleList: ["Developed direct instruction based on Gagné's Nine Events", "Presented"] }
+    },
+    PROCESS: [
+      ["01", "Discover", "", "Find the real problems learners face in classrooms and daily life.", "Desk research, interviews"],
+      ["02", "Research", "", "Turn problems into concrete needs through surveys, interviews and benchmarks.", "Clustering, 5 Whys, HMW"],
+      ["03", "Design", "", "Build the solution's backbone with instructional models and service structure.", "Service plans, blueprints"],
+      ["04", "Prototype", "", "Make ideas tangible with screens, AI features, lesson materials and games.", "Figma, FlutterFlow, vibe coding"],
+      ["05", "Iterate", "", "Fix with user tests and feedback, and take it to the next stage.", "QA"]
+    ],
+    CAPS: [
+      ["Research", "Survey and interview design, benchmarking and literature review, needs analysis"],
+      ["Learning Design", "Education program design, education service design"],
+      ["Product & UX", "Market research, feature specs, IA and user flows, wireframes"],
+      ["Design Tools", "Photoshop · Illustrator · Figma"],
+      ["Build & Automate", "FlutterFlow · n8n · Python"],
+      ["AI", "Claude · ChatGPT · Cowork · Manus"]
+    ],
+    TIMELINE: [
+      { year: 2024, theme: "Starting with program design and UX research", items: [
+        ["2024", "Leadership", "Class representative, Educational Technology '24"],
+        ["Spring", "Project", "Part-time job education program", "parttime"],
+        ["Apr – Aug", "Activity", "Ewha admissions alumni visit team"],
+        ["Sep –", "Project", "ANY Mal · 59th Ewha ET Exhibition", "any-mal"]
+      ]},
+      { year: 2025, theme: "Expanding into product planning, learning experience and visual design", items: [
+        ["Mar – Aug", "Project", "GongSpot · UMC 8th PM, Demo Day and Job Fair booths", "gongspot"],
+        ["Mar – Jun", "Project", "Bulls One Shot · instructional design", "bulls"],
+        ["Spring", "Project", "AIDT Assistant", "aidt"],
+        ["2025", "Leadership", "Team lead, College Social Leader Mentoring (Startup)"],
+        ["May – Jul", "Activity", "2025 Yeongdeungpo Youth Bridge Planning Team · top performer", "youthbridge"],
+        ["Jul", "Design", "Sorimoa PR lead · summer concert brochure", "sorimoa"],
+        ["Sep –", "Project", "SEA:UM team lead · 60th Ewha ET Exhibition", "seaum"],
+        ["Fall", "Project", "Museum-based informal learning", "museum"],
+        ["Fall", "Best project", "Learning Experience Design · career education", "career-lxd"],
+        ["Fall", "Design", "YDBB Concert Pass tickets", "ydbb"]
+      ]},
+      { year: 2026, theme: "Bringing AI, education and leadership together", items: [
+        ["Spring", "Conference", "SEA:UM · 2026 Spring KAEIM Conference", "seaum"],
+        ["2026", "Project", "HighFit · Public Data Competition", "haipit"],
+        ["2026", "Hackathon", "PickEat · Upstage Low-code Hackathon", "pickeat"],
+        ["2026", "Contest", "LinKick · Football Industry Idea Contest", "linkick"],
+        ["Jan", "Design", "Sorimoa winter concert brochure and poster", "sorimoa"],
+        ["2026", "Design", "Ewha Knitting Club design lead · poster", "knitting"],
+        ["Summer", "Project", "Hogwarts EdTech experience program", "hogwarts"],
+        ["Aug", "Training", "2026 OUTTA AI Bootcamp · 1st place in AI Competition problem"],
+        ["Sep – Oct", "Project", "My Safe Dream House · AI safety contest team lead", "dreamhouse"],
+        ["Fall", "Leadership", "President, Curriculum education volunteer club"],
+        ["Ongoing", "Mentoring", "Youth mentor, Konkuk University AI Companion Project"]
+      ]}
+    ],
+    LEAD: [
+      ["2024", "Class representative, EdTech '24", "Communication and coordination across the class"],
+      ["2025", "GongSpot PM", "Ran the UMC 8th product team, Demo Day and Job Fair booths", "gongspot"],
+      ["2025", "Team lead, Social Leader Mentoring (Startup)", "Set team goals and coordinated roles"],
+      ["2025", "Sorimoa choir club PR lead", "Instagram and YouTube, recruiting, concert brochures and posters", "sorimoa"],
+      ["2026", "Ewha Knitting Club design lead", "Led the design team and made promo posters", "knitting"],
+      ["2025 – 26", "SEA:UM team lead", "Planning, design, app development, from exhibition to conference", "seaum"],
+      ["2026", "Team Jipkimi lead", "2-person team, AI Youth Activity Safety Contest", "dreamhouse"],
+      ["Fall 2026", "President, Curriculum volunteer club", "Program support and reports, materials, attendance and schedules"]
+    ],
+    VOL: [["Ewha welfare daycare", 30], ["Ewha Elementary SW class (Entry · AI)", 18], ["Eco classroom", 8], ["Ewha High ‘Build a startup app with vibe coding’", 4]],
+    TEACH: [
+      ["Ongoing", "Youth mentor, Konkuk AI Companion Project", "Supporting learners' AI-based self-directed inquiry"],
+      ["2nd year", "Private tutoring for high schoolers", "Diagnosing levels and tailoring explanations and feedback"],
+      ["Apr – Aug 2024", "Ewha admissions alumni visit team", "Shared college life with students at my high school"]
+    ],
+    AWARDS: [
+      ["2026 OUTTA AI Bootcamp", "Aug 2026", "<b>1st place in an AI Competition problem</b> · NLP mini project ‘Monggle Knit’. Sponsored by SNU engineering education centers"],
+      ["Grand Prize, Yeongdeungpo Youth Bridge Planning Team", "Jul 2025", "Selected as <b>top performer</b> · hosted by Yeongdeungpo-gu Office, run by Newteams Inc. (May – Jul 2025)", "youthbridge"],
+      ["UMC 8th completion", "Aug 2025", "University MakeUs Challenge, a national college IT club · <b>Plan part</b>, junior course"],
+      ["Best project, Learning Experience Design", "Fall 2025", "Improving the learning experience of career education for middle schoolers", "career-lxd"],
+      ["Scholarships", "Ewha", "Academic Activity Scholarship ×2 · Major Leadership Scholarship ×1"]
+    ],
+    I18N: [
+      ['.top nav a[href="#about"]', "About"], ['.top nav a[href="#work"]', "Work"], ['.top nav a[href="#timeline"]', "Timeline"],
+      ['.top nav a[href="#field"]', "Leadership"], ['.top nav a[href="#awards"]', "Awards"], ['.top nav a[href="#contact"]', "Contact"],
+      ['.hero-kicker .label:last-child', "Learning &amp; Service Designer"],
+      ['#hero-title', 'Turning learning<br>into <span class="swipe">joyful experiences</span>'],
+      ['.hero-lead', "I'm <strong>Daim Kim</strong>, a learning and service designer who finds where learners get stuck, then builds and tests the solution myself."],
+      ['.hero-body', "Grounded in needs analysis, instructional design and UX research from educational technology, I turn ideas into real experiences with Figma, FlutterFlow, n8n, Python and generative AI."],
+      ['.btn-main', "View selected work →"], ['.btn-sub', "Get in touch"],
+      ['.hero-side .focus', '<li class="tag">Learning Experience Design</li><li class="tag">Service Planning</li><li class="tag">UX Research</li><li class="tag">Visual Design</li><li class="tag">Education Operations</li>'],
+      ['.hero-facts', '<div><dt class="label">University</dt><dd>Ewha Womans University, Educational Technology (’24)</dd></div><div><dt class="label">Double major</dt><dd>Convergence Content</dd></div><div><dt class="label">In the field</dt><dd>2 years of tutoring · 60 volunteer teaching hours</dd></div>'],
+      ['#about .sec-head h2', "I find the problem and test it to the end"], ['#about .sec-head p', "Discover, research, design, prototype, iterate."],
+      ['#work .sec-head h2', "Selected work"], ['#work .sec-head p', "Tap a card to see the problem, my role, the process and deliverables."],
+      ['.archive-head h3', 'All projects <span id="count"></span>'],
+      ['#timeline .sec-head h2', "Timeline"],
+      ['#field .sec-head h2', "Leading together, learning by teaching"], ['#field .sec-head p', "I've taught learners from preschool to high school and led teams and clubs."],
+      ['.two > div:first-child .col-title', "Leadership"], ['.two > div:last-child .col-title', "Teaching"],
+      ['#awards .sec-head h2', "Training &amp; awards"], ['#copy', "Copy"], ['#close', "Close ✕"]
+    ]
+  };
+
+  var KO_UI = { more: "자세히 보기 →", all: "전체", period: "기간", context: "맥락", role: "역할", tools: "도구", project: "프로젝트",
+    problem: "문제와 해결", solution: "해결안", myrole: "나의 역할", pivot: "사용자 조사가 기능을 바꿨다", process: "과정",
+    keydesign: "혼잡도를 믿을 수 있게", outcome: "결과", deliverables: "산출물", vol: "교육봉사 4건", hours: "시간",
+    copied: "복사됨", copy: "복사", selected: "선택됨", details: "자세히 보기" };
+  var KO_CATS = {}; CATS.forEach(function (c) { KO_CATS[c.id] = c.label; });
+  var LANG = "ko";
+  try { if (localStorage.getItem("pf-lang") === "en") LANG = "en"; } catch (e) {}
+
   /* helpers */
   var $ = function (s, r) { return (r || document).querySelector(s); };
   function esc(s) { return String(s == null ? "" : s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;"); }
-  function byId(id) { for (var i = 0; i < P.length; i++) if (P[i].id === id) return P[i]; return null; }
-  function catLabel(id) { for (var i = 0; i < CATS.length; i++) if (CATS[i].id === id) return CATS[i].label; return id; }
   function has(v) { return Array.isArray(v) ? v.length > 0 : !!(v && String(v).trim()); }
+  function UI() { return LANG === "en" ? EN.ui : KO_UI; }
+  function catLabel(id) { return (LANG === "en" ? EN.cats : KO_CATS)[id] || id; }
+  function proj(p) {
+    if (LANG !== "en") return p;
+    var e = EN.P[p.id] || {}, o = Object.assign({}, p, e);
+    if (e.caps && p.gallery) o.gallery = p.gallery.map(function (f, i) { return Object.assign({}, f, { cap: e.caps[i] || f.cap }); });
+    if (p.cover && p.cover.indexOf("thumb-") > -1) o.cover = p.cover.replace(".jpg", "-en.jpg");
+    if (p.format === "팀") o.format = EN.ui.team; else if (p.format === "개인") o.format = EN.ui.solo;
+    return o;
+  }
+  function byId(id) { for (var i = 0; i < P.length; i++) if (P[i].id === id) return proj(P[i]); return null; }
+  function D(name) { return LANG === "en" ? EN[name] : { PROCESS: PROCESS, CAPS: CAPS, TIMELINE: TIMELINE, LEAD: LEAD, VOL: VOL, TEACH: TEACH, AWARDS: AWARDS }[name]; }
   function plink(id, text, cls) { return '<button type="button" class="' + (cls || "t-link") + '" data-open="' + esc(id) + '">' + esc(text) + "</button>"; }
 
-  /* about */
-  $("#process").innerHTML = PROCESS.map(function (s) {
-    return '<li><span class="no">' + s[0] + '</span><h3>' + esc(s[1]) + "<span>" + esc(s[2]) + '</span></h3><p>' + esc(s[3]) + '</p><p class="ex">' + esc(s[4]) + "</p></li>";
-  }).join("");
-  $("#caps").innerHTML = CAPS.map(function (c) { return '<div class="cap"><h3>' + esc(c[0]) + "</h3><p>" + esc(c[1]) + "</p></div>"; }).join("");
+  /* static text */
+  var KO_STATIC = EN.I18N.map(function (r) { var el = $(r[0]); return el ? el.innerHTML : ""; });
+  function applyStatic() {
+    EN.I18N.forEach(function (r, i) { var el = $(r[0]); if (el) el.innerHTML = LANG === "en" ? r[1] : KO_STATIC[i]; });
+    document.documentElement.lang = LANG === "en" ? "en" : "ko";
+    var b = $("#langBtn"); if (b) { b.textContent = LANG === "en" ? "KOR" : "ENG"; b.setAttribute("aria-label", LANG === "en" ? "한국어로 보기" : "View in English"); }
+  }
 
-  /* featured */
-  $("#cards").innerHTML = FEATURED.map(function (id, i) {
-    var p = byId(id);
-    return '<button type="button" class="card" data-open="' + p.id + '" aria-label="' + esc(p.title) + ' 자세히 보기">' +
-      '<span class="shot"><img src="' + esc(p.cover) + '" alt="' + esc(p.coverAlt || p.title) + '" width="1200" height="750"></span>' +
-      '<span class="card-meta"><span class="card-no">' + String(i + 1).padStart(2, "0") + '</span><span class="label">' + esc(p.period) + " · " + esc(p.role) + "</span>" +
-      (p.badge ? '<span class="chip">' + esc(p.badge) + "</span>" : "") + "</span>" +
-      '<span class="card-title">' + esc(p.title) + "</span>" +
-      '<span class="card-sub">' + esc(p.sub) + "</span>" +
-      '<span class="card-sum">' + p.summary.replace(/<\/?mark>/g, "") + "</span>" +
-      '<span class="card-more">자세히 보기 →</span></button>';
-  }).join("");
-
-  /* archive */
   var filter = "all";
-  $("#filters").innerHTML = '<button type="button" class="filter" data-filter="all" aria-pressed="true">전체</button>' +
-    CATS.map(function (c) { return '<button type="button" class="filter" data-filter="' + c.id + '" aria-pressed="false">' + esc(c.label) + "</button>"; }).join("");
-  var sorted = P.slice().sort(function (a, b) { return b.year - a.year; });
   function renderRows() {
+    var sorted = P.slice().sort(function (a, b) { return b.year - a.year; }).map(proj);
     var list = sorted.filter(function (p) { return filter === "all" || p.cats.indexOf(filter) > -1; });
     $("#rows").innerHTML = list.map(function (p) {
       return '<li><button type="button" class="rowbtn" data-open="' + p.id + '">' +
@@ -822,41 +1095,57 @@ dialog.panel::backdrop { background: var(--scrim); }
     $("#count").textContent = "(" + list.length + ")";
     Array.prototype.forEach.call(document.querySelectorAll(".filter"), function (b) { b.setAttribute("aria-pressed", String(b.dataset.filter === filter)); });
   }
-  renderRows();
 
-  /* timeline */
-  $("#years").innerHTML = TIMELINE.map(function (y) {
-    return '<section class="year sheet" aria-label="' + y.year + '"><div><span class="year-num">' + y.year + '</span><p class="year-theme">' + esc(y.theme) + "</p></div>" +
-      '<ol class="tl">' + y.items.map(function (it) {
-        return '<li><span class="t-when">' + esc(it[0]) + '</span><span class="t-type">' + esc(it[1]) + '</span><span class="t-text">' + (it[3] ? plink(it[3], it[2]) : esc(it[2])) + "</span></li>";
-      }).join("") + "</ol></section>";
-  }).join("");
-
-  /* leadership & teaching */
-  $("#leadership").innerHTML = LEAD.map(function (l) {
-    return '<li><span class="l-when">' + esc(l[0]) + '</span><div><p class="l-title">' + (l[3] ? plink(l[3], l[1]) : esc(l[1])) + '</p><p class="l-text">' + esc(l[2]) + "</p></div></li>";
-  }).join("");
-  var total = VOL.reduce(function (s, v) { return s + v[1]; }, 0);
-  var shades = ["var(--c1)", "var(--c2)", "var(--c3)", "var(--c4)"];
-  $("#vol").innerHTML = '<div class="vol-head"><span class="label">교육봉사 4건</span><span class="vol-total">' + total + "<small>시간</small></span></div>" +
-    '<div class="vol-bar" role="img" aria-label="' + esc(VOL.map(function (v) { return v[0] + " " + v[1] + "시간"; }).join(", ")) + '">' +
-    VOL.map(function (v, k) { return '<span style="flex:' + v[1] + ";background:" + shades[k] + '"></span>'; }).join("") + "</div>" +
-    '<ul class="vol-legend">' + VOL.map(function (v, k) { return '<li><span class="dot" style="background:' + shades[k] + '"></span><span>' + esc(v[0]) + '</span><span class="h">' + v[1] + "h</span></li>"; }).join("") + "</ul>";
-  $("#teaching").innerHTML = TEACH.map(function (t) {
-    return '<li><span class="l-when">' + esc(t[0]) + '</span><div><p class="l-title">' + esc(t[1]) + '</p><p class="l-text">' + esc(t[2]) + "</p></div></li>";
-  }).join("");
-
-  /* awards */
-  $("#awardList").innerHTML = AWARDS.map(function (a) {
-    return "<li><strong>" + (a[3] ? plink(a[3], a[0]) : esc(a[0])) + '<span class="when">' + esc(a[1]) + '</span></strong><span class="d">' + a[2] + "</span></li>";
-  }).join("");
+  function renderAll() {
+    applyStatic();
+    $("#process").innerHTML = D("PROCESS").map(function (s) {
+      return '<li><span class="no">' + s[0] + '</span><h3>' + esc(s[1]) + (s[2] ? "<span>" + esc(s[2]) + "</span>" : "") + '</h3><p>' + esc(s[3]) + '</p><p class="ex">' + esc(s[4]) + "</p></li>";
+    }).join("");
+    $("#caps").innerHTML = D("CAPS").map(function (c) { return '<div class="cap"><h3>' + esc(c[0]) + "</h3><p>" + esc(c[1]) + "</p></div>"; }).join("");
+    $("#cards").innerHTML = FEATURED.map(function (id, i) {
+      var p = byId(id);
+      return '<button type="button" class="card" data-open="' + p.id + '" aria-label="' + esc(p.title) + " " + UI().details + '">' +
+        '<span class="shot"><img src="' + esc(p.cover) + '" alt="' + esc(p.coverAlt || p.title) + '" width="1200" height="750"></span>' +
+        '<span class="card-meta"><span class="card-no">' + String(i + 1).padStart(2, "0") + '</span><span class="label">' + esc(p.period) + " · " + esc(p.role) + "</span>" +
+        (p.badge ? '<span class="chip">' + esc(p.badge) + "</span>" : "") + "</span>" +
+        '<span class="card-title">' + esc(p.title) + "</span>" +
+        '<span class="card-sub">' + esc(p.sub) + "</span>" +
+        '<span class="card-sum">' + p.summary.replace(/<\/?mark>/g, "") + "</span>" +
+        '<span class="card-more">' + UI().more + "</span></button>";
+    }).join("");
+    $("#filters").innerHTML = '<button type="button" class="filter" data-filter="all" aria-pressed="true">' + UI().all + "</button>" +
+      CATS.map(function (c) { return '<button type="button" class="filter" data-filter="' + c.id + '" aria-pressed="false">' + esc(catLabel(c.id)) + "</button>"; }).join("");
+    renderRows();
+    $("#years").innerHTML = D("TIMELINE").map(function (y) {
+      return '<section class="year sheet" aria-label="' + y.year + '"><div><span class="year-num">' + y.year + '</span><p class="year-theme">' + esc(y.theme) + "</p></div>" +
+        '<ol class="tl">' + y.items.map(function (it) {
+          return '<li><span class="t-when">' + esc(it[0]) + '</span><span class="t-type">' + esc(it[1]) + '</span><span class="t-text">' + (it[3] ? plink(it[3], it[2]) : esc(it[2])) + "</span></li>";
+        }).join("") + "</ol></section>";
+    }).join("");
+    $("#leadership").innerHTML = D("LEAD").map(function (l) {
+      return '<li><span class="l-when">' + esc(l[0]) + '</span><div><p class="l-title">' + (l[3] ? plink(l[3], l[1]) : esc(l[1])) + '</p><p class="l-text">' + esc(l[2]) + "</p></div></li>";
+    }).join("");
+    var V = D("VOL"), total = V.reduce(function (s, v) { return s + v[1]; }, 0);
+    var shades = ["var(--c1)", "var(--c2)", "var(--c3)", "var(--c4)"];
+    $("#vol").innerHTML = '<div class="vol-head"><span class="label">' + UI().vol + '</span><span class="vol-total">' + total + "<small>" + UI().hours + "</small></span></div>" +
+      '<div class="vol-bar" role="img" aria-label="' + esc(V.map(function (v) { return v[0] + " " + v[1] + "h"; }).join(", ")) + '">' +
+      V.map(function (v, k) { return '<span style="flex:' + v[1] + ";background:" + shades[k] + '"></span>'; }).join("") + "</div>" +
+      '<ul class="vol-legend">' + V.map(function (v, k) { return '<li><span class="dot" style="background:' + shades[k] + '"></span><span>' + esc(v[0]) + '</span><span class="h">' + v[1] + "h</span></li>"; }).join("") + "</ul>";
+    $("#teaching").innerHTML = D("TEACH").map(function (t) {
+      return '<li><span class="l-when">' + esc(t[0]) + '</span><div><p class="l-title">' + esc(t[1]) + '</p><p class="l-text">' + esc(t[2]) + "</p></div></li>";
+    }).join("");
+    $("#awardList").innerHTML = D("AWARDS").map(function (a) {
+      return "<li><strong>" + (a[3] ? plink(a[3], a[0]) : esc(a[0])) + '<span class="when">' + esc(a[1]) + '</span></strong><span class="d">' + a[2] + "</span></li>";
+    }).join("");
+  }
 
   /* dialog */
-  var dlg = $("#panel"), body = $("#panelBody"), last = null;
+  var dlg = $("#panel"), body = $("#panelBody"), last = null, openId = null;
   function listHTML(arr) { return "<ul>" + arr.map(function (x) { return "<li>" + x + "</li>"; }).join("") + "</ul>"; }
   function sec(label, title, inner, wide) { return '<section class="p-sec' + (wide ? " p-wide" : "") + '"><h3><span class="label">' + label + "</span>" + title + "</h3>" + inner + "</section>"; }
   function panelHTML(p) {
-    var facts = [["기간", p.period], ["맥락", p.context], ["역할", p.role + (p.format ? " · " + p.format + " 프로젝트" : "")], ["도구", p.tools]].filter(function (f) { return has(f[1]); });
+    var u = UI();
+    var facts = [[u.period, p.period], [u.context, p.context], [u.role, p.role + (p.format ? " · " + p.format + (LANG === "en" ? " " : " ") + u.project : "")], [u.tools, p.tools]].filter(function (f) { return has(f[1]); });
     var h = '<header class="p-head">' +
       '<h2 class="p-title" id="p-title">' + esc(p.title) + "</h2>" +
       '<p class="p-sub">' + esc(p.sub) + "</p>" +
@@ -864,13 +1153,13 @@ dialog.panel::backdrop { background: var(--scrim); }
       (has(p.links) ? '<p class="p-links">' + p.links.map(function (l) { return '<a class="play" href="' + esc(l[0]) + '" target="_blank" rel="noopener">' + esc(l[1]) + "</a>"; }).join("") + "</p>" : "") +
       '<dl class="facts-row">' + facts.map(function (f) { return "<div><dt>" + f[0] + "</dt><dd>" + esc(f[1]) + "</dd></div>"; }).join("") + "</dl></header>";
     var b = "";
-    if (has(p.problem) || has(p.solution)) b += sec("Problem", "문제와 해결", (has(p.problem) ? "<p>" + esc(p.problem) + "</p>" : "") + (has(p.solution) ? "<p><b>해결안</b> " + esc(p.solution) + "</p>" : ""));
-    if (has(p.roleList)) b += sec("Role", "나의 역할", (p.roleNote ? '<p class="note">' + esc(p.roleNote) + "</p>" : "") + listHTML(p.roleList.map(esc)));
-    if (has(p.pivot)) b += sec("Pivot", "사용자 조사가 기능을 바꿨다", '<div class="pivot">' + p.pivot.map(function (v) { return '<div><span class="label">' + v[0] + "</span><p>" + v[1] + "</p></div>"; }).join("") + "</div>", true);
-    if (has(p.process)) b += sec("Process", "과정", (p.processNote ? '<p class="note">' + esc(p.processNote) + "</p>" : "") + '<ol class="steps">' + p.process.map(function (s) { return '<li><span class="k">' + esc(s[0]) + "</span>" + esc(s[1]) + "</li>"; }).join("") + "</ol>", true);
-    if (has(p.design)) b += sec("Key design", "혼잡도를 믿을 수 있게", listHTML(p.design), true);
-    if (has(p.outcomes)) b += sec("Outcome", "결과", listHTML(p.outcomes.map(esc)));
-    if (has(p.deliverables)) b += sec("Deliverables", "산출물", listHTML(p.deliverables.map(esc)));
+    if (has(p.problem) || has(p.solution)) b += sec("Problem", u.problem, (has(p.problem) ? "<p>" + esc(p.problem) + "</p>" : "") + (has(p.solution) ? "<p><b>" + u.solution + "</b> " + esc(p.solution) + "</p>" : ""));
+    if (has(p.roleList)) b += sec("Role", u.myrole, (p.roleNote ? '<p class="note">' + esc(p.roleNote) + "</p>" : "") + listHTML(p.roleList.map(esc)));
+    if (has(p.pivot)) b += sec("Pivot", u.pivot, '<div class="pivot">' + p.pivot.map(function (v) { return '<div><span class="label">' + v[0] + "</span><p>" + v[1] + "</p></div>"; }).join("") + "</div>", true);
+    if (has(p.process)) b += sec("Process", u.process, (p.processNote ? '<p class="note">' + esc(p.processNote) + "</p>" : "") + '<ol class="steps">' + p.process.map(function (s) { return '<li><span class="k">' + esc(s[0]) + "</span>" + esc(s[1]) + "</li>"; }).join("") + "</ol>", true);
+    if (has(p.design)) b += sec("Key design", u.keydesign, listHTML(p.design), true);
+    if (has(p.outcomes)) b += sec("Outcome", u.outcome, listHTML(p.outcomes.map(esc)));
+    if (has(p.deliverables)) b += sec("Deliverables", u.deliverables, listHTML(p.deliverables.map(esc)));
     var g = has(p.gallery) ? '<div class="gallery">' + p.gallery.map(function (f) {
       return '<figure><div class="g ' + f.cls + '">' + f.imgs.map(function (im) { return '<img src="' + esc(im[0]) + '" alt="' + esc(im[1]) + '" loading="lazy" decoding="async">'; }).join("") +
         "</div>" + (f.cap ? "<figcaption>" + esc(f.cap) + "</figcaption>" : "") + "</figure>";
@@ -879,6 +1168,7 @@ dialog.panel::backdrop { background: var(--scrim); }
   }
   function openP(id) {
     var p = byId(id); if (!p) return;
+    openId = id;
     body.innerHTML = panelHTML(p);
     $("#p-kicker").textContent = p.year + " · " + p.cats.map(catLabel).join(" · ");
     if (!dlg.open) {
@@ -890,7 +1180,7 @@ dialog.panel::backdrop { background: var(--scrim); }
     $("#close").focus();
   }
   function closeP() { if (dlg.open) { if (typeof dlg.close === "function") dlg.close(); else { dlg.removeAttribute("open"); onClose(); } } }
-  function onClose() { document.body.classList.remove("modal-open"); if (last && document.contains(last)) last.focus(); }
+  function onClose() { openId = null; document.body.classList.remove("modal-open"); if (last && document.contains(last)) last.focus(); }
   dlg.addEventListener("close", onClose);
   dlg.addEventListener("click", function (e) { if (e.target === dlg) closeP(); });
   $("#close").addEventListener("click", closeP);
@@ -899,22 +1189,29 @@ dialog.panel::backdrop { background: var(--scrim); }
     var o = e.target.closest("[data-open]");
     if (o) { openP(o.getAttribute("data-open")); return; }
     var f = e.target.closest(".filter");
-    if (f) { filter = f.dataset.filter; renderRows(); }
+    if (f) { filter = f.dataset.filter; renderRows(); return; }
+    if (e.target.closest("#langBtn")) {
+      LANG = LANG === "en" ? "ko" : "en";
+      try { localStorage.setItem("pf-lang", LANG); } catch (err) {}
+      renderAll();
+    }
   });
 
-  /* deep link: #seaum 같은 프로젝트 id로 바로 열기 */
+  renderAll();
   var h = (location.hash || "").replace("#", "");
-  if (h && byId(h)) openP(h);
+  if (h === "en" && LANG !== "en") { LANG = "en"; renderAll(); }
+  else if (h && byId(h)) openP(h);
 
   /* copy */
   $("#copy").addEventListener("click", function () {
     var btn = this, el = $("#email");
-    var done = function () { btn.textContent = "복사됨"; setTimeout(function () { btn.textContent = "복사"; }, 1600); };
-    var fallback = function () { var r = document.createRange(); r.selectNodeContents(el); var s = window.getSelection(); s.removeAllRanges(); s.addRange(r); btn.textContent = "선택됨"; };
+    var done = function () { btn.textContent = UI().copied; setTimeout(function () { btn.textContent = UI().copy; }, 1600); };
+    var fallback = function () { var r = document.createRange(); r.selectNodeContents(el); var s = window.getSelection(); s.removeAllRanges(); s.addRange(r); btn.textContent = UI().selected; };
     try { navigator.clipboard.writeText(el.textContent).then(done, fallback); } catch (err) { fallback(); }
   });
 })();
 </script>
+
 
 </body>
 </html>
